@@ -7,10 +7,10 @@ routes.forEach((route, index) => {
     fastify.route(route)
 })
 
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/online', { useNewUrlParser: true })
-    .then(async() => { console.log('connection successful!..') })
-    .catch(async() => { console.log(mongoose.Error) })
+// const mongoose = require('mongoose')
+// mongoose.connect('mongodb://localhost/online', { useNewUrlParser: true })
+//     .then(async() => { console.log('connection successful!..') })
+//     .catch(async() => { console.log(mongoose.Error) })
 
 fastify.get('/', async(request, response) => {
     await response.send({
