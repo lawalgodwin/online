@@ -18,9 +18,11 @@ fastify.get('/', async(request, response) => {
     })
 })
 
+var PORT = process.env.PORT || 3000;
+
 const start = async() => {
     try {
-        await fastify.listen(3000)
+        await fastify.listen(PORT, '0.0.0.0')
         fastify.log.info(`server listening on ${fastify.server.address().port}`)
 
     } catch (error) {
