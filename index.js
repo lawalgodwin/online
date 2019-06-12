@@ -8,7 +8,7 @@ routes.forEach((route, index) => {
 })
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/online', { useNewUrlParser: true })
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-l10xd.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true })
     .then(async() => { console.log('connection successful!..') })
     .catch(async() => { console.log(mongoose.Error) })
 
